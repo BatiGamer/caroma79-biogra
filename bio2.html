@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Autobiografía de Caroma79</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: black;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .fondo-estrellas {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: black;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .estrella {
+      position: absolute;
+      background: #b2f5ff;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #b2f5ff, 0 0 10px #00f0ff;
+      animation: caer linear infinite;
+    }
+
+    @keyframes caer {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+
+    .tarjeta {
+      background-color: rgba(44, 44, 62, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      animation: aparecer 1.2s ease;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #00ffff;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .destacado {
+      color: #ffd700;
+      font-weight: bold;
+    }
+
+    .foto-perfil {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid white;
+      object-fit: cover;
+      margin-bottom: 15px;
+      background-color: #111;
+    }
+
+    .boton {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #00ffff;
+      color: #000;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .boton:hover {
+      background-color: #00cccc;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="fondo-estrellas" id="fondo-estrellas"></div>
+
+  <div class="tarjeta">
+    <img src="https://cdn.discordapp.com/attachments/1377288272837083159/1384209226599235625/5e91980be4aaf1fa4193e9d9b2f934211.webp?ex=685198cc&is=6850474c&hm=72919077794efd1e8534e62c702e7871e781d43ddf3b2f585c333f5cba736c58&" alt="Foto de perfil" class="foto-perfil">
+    
+    <h1>¡Hola! Soy <span class="destacado">Caroma79</span></h1>
+    <p>Mi ID de discord es <span class="destacado">caroma79_algo</span>.</p>
+    <p>Muchos me conocían como <span class="destacado">BatiGamerYT</span>, mi antigua cuenta que fue baneada, pero seguimos adelante.</p>
+    <p>Estoy aprendiendo a programar: <span class="destacado">HTML</span>, <span class="destacado">CSS</span>, <span class="destacado">JavaScript</span> y <span class="destacado">Python</span>.</p>
+    <p>Me encanta jugar <span class="destacado">Minecraft</span>, <span class="destacado">Rocket League</span> y también disfruto mucho jugar al <span class="destacado">fútbol</span>.</p>
+    <p>Este es solo el comienzo... <span class="destacado">voy por más xD</span> </p>
+    
+    <button class="boton" onclick="mostrarNada()">Ver proyectos</button>
+  </div>
+
+  <script>
+    function mostrarNada() {
+      alert("Pensando... Nada xD");
+    }
+
+    // Estrellas más grandes, con brillo
+    const fondo = document.getElementById("fondo-estrellas");
+    for (let i = 0; i < 120; i++) {
+      const estrella = document.createElement("div");
+      estrella.className = "estrella";
+      const size = Math.random() * 3 + 2; // Tamaño entre 2px y 5px
+      estrella.style.width = `${size}px`;
+      estrella.style.height = `${size}px`;
+      estrella.style.left = Math.random() * 100 + "vw";
+      estrella.style.top = Math.random() * -100 + "vh";
+      estrella.style.animationDuration = (Math.random() * 5 + 5) + "s";
+      estrella.style.opacity = 0.8 + Math.random() * 0.2;
+      fondo.appendChild(estrella);
+    }
+  </script>
+
+</body>
+</html>
